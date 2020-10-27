@@ -1,0 +1,11 @@
+.card {
+	overflow: hidden;
+	
+	&>.item {
+		background-color: #ffffff;
+		overflow: hidden;
+		border-radius: 10rpx;
+		margin: 30rpx;
+	}
+	
+}

@@ -1,0 +1,26 @@
+button[type=link] {
+	display: inline-flex;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	line-height: 1;
+	align-items: center;
+	font-size: inherit;
+	color: inherit;
+	
+	&:after {
+		border: none;
+	}
+}
+
+/*取消原生button样式*/
+button.none {
+	line-height: normal;
+	background-color: transparent;
+	padding-left: 0;
+	padding-right: 0;
+	
+	&:after {
+		border: none;
+	}
+}

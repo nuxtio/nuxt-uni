@@ -1,0 +1,136 @@
+/*定位*/
+.relative, .rela {
+	position: relative;
+}
+.absolute, .abso {
+	position: absolute;
+}
+
+.block {
+	display: block;
+}
+
+/*flex布局*/
+.flex {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.align-top {
+	align-items: flex-start;
+}
+
+.align-bottom {
+	align-items: flex-end;
+}
+
+.align-baseline {
+	align-items: baseline;
+}
+
+.row-center {
+	justify-content: center;
+}
+
+.row-left {
+	justify-content: flex-start;
+}
+
+.row-right {
+	justify-content: flex-end;
+}
+
+.row-between {
+	justify-content: space-between;
+}
+
+.row-around {
+	justify-content: space-around;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+// 定义flex等分
+@for $i from 1 through 12 {
+	.flex-#{$i} {
+		flex: $i;
+	}
+}
+
+
+// 定义内外边距，历遍1-80
+@for $i from 0 through 80 {
+	// 只要双数和能被5除尽的数
+	@if $i % 2 == 0 or $i % 5 == 0 {
+		// 得出：margin-30或者m-30
+		.margin-#{$i}, .m-#{$i} {
+			margin: $i + rpx!important;
+		}
+		
+		// 得出：padding-30或者p-30
+		.padding-#{$i}, .p-#{$i} {
+			padding: $i + rpx!important;
+		}
+		
+		.m-lr-#{$i} {
+			margin-left: $i + rpx!important;
+			margin-right: $i + rpx!important;
+		}
+		
+		.p-lr-#{$i} {
+			padding-left: $i + rpx!important;
+			padding-right: $i + rpx!important;
+		}
+		
+		.m-tb-#{$i} {
+			margin-top: $i + rpx !important;
+			margin-bottom: $i + rpx !important;
+		}
+		
+		.p-tb-#{$i} {
+			padding-top: $i + rpx !important;
+			padding-bottom: $i + rpx !important;
+		}
+		
+		@each $short, $long in l left, t top, r right, b bottom {
+			// 缩写版，结果如： m-l-30
+			// 定义外边距
+			.m-#{$short}-#{$i} {
+				margin-#{$long}: $i + rpx!important;
+			}
+			
+			// 定义内边距
+			.p-#{$short}-#{$i} {
+				padding-#{$long}: $i + rpx!important;
+			}
+		}
+	}
+}

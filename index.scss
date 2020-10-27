@@ -1,0 +1,326 @@
+@import "./css/color.scss";
+@import "./css/layout.scss";
+@import "./css/text.scss";
+@import "./css/grid.scss";
+@import "./css/reset.scss";
+@import "./css/button.scss";
+@import "./css/shadow.scss";
+@import "./css/list.scss";
+@import "./css/icon.scss";
+@import "./css/swiper.scss";
+@import "./css/tag.scss";
+@import "./css/card.scss";
+
+view,
+scroll-view,
+swiper,
+button,
+input,
+textarea,
+label,
+navigator,
+image {
+  box-sizing: border-box;
+}
+
+/* ==================
+          图片
+ ==================== */
+
+image {
+  max-width: 100%;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+image.loading::before {
+  content: "";
+  background-color: #f5f5f5;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+image.loading::after {
+  content: "\e64f";
+  font-family: "icon";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  font-size: 32rpx;
+  margin: auto;
+  color: #C81C1E;
+  -webkit-animation: icon-spin 2s infinite linear;
+  animation: icon-spin 2s infinite linear;
+  display: block;
+}
+
+/* ==================
+          头像
+ ==================== */
+
+.avatar {
+	font-variant: small-caps;
+	margin: 0;
+	padding: 0;
+	display: inline-flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	background-color: #ccc;
+	color: #ffffff;
+	white-space: nowrap;
+	position: relative;
+	width: 64rpx;
+	height: 64rpx;
+	background-size: cover;
+	background-position: center;
+	vertical-align: middle;
+  font-size: 1.5em;
+  border-radius: 100%;
+}
+
+.avatar.sm {
+	width: 48rpx;
+	height: 48rpx;
+	font-size: 1em;
+}
+
+.avatar.lg {
+	width: 96rpx;
+	height: 96rpx;
+	font-size: 2em;
+}
+
+.avatar.xl {
+	width: 128rpx;
+	height: 128rpx;
+	font-size: 2.5em;
+}
+
+.avatar .avatar-text {
+	font-size: 0.4em;
+}
+
+.avatar-group {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	display: inline-block;
+}
+
+.avatar-group .avatar {
+	margin-left: -30rpx;
+	border: 4rpx solid #f1f1f1;
+	vertical-align: middle;
+}
+
+.avatar-group .avatar.sm {
+	margin-left: -20rpx;
+	border: 1rpx solid #f1f1f1;
+}
+
+
+/* ==================
+        背景,边框
+ ==================== */
+.line-red::after,
+.lines-red::after {
+  border-color: #e54d42;
+}
+
+.line-orange::after,
+.lines-orange::after {
+  border-color: #f37b1d;
+}
+
+.line-yellow::after,
+.lines-yellow::after {
+  border-color: #fbbd08;
+}
+
+.line-olive::after,
+.lines-olive::after {
+  border-color: #8dc63f;
+}
+
+.line-green::after,
+.lines-green::after {
+  border-color: #39b54a;
+}
+
+.line-cyan::after,
+.lines-cyan::after {
+  border-color: #1cbbb4;
+}
+
+.line-blue::after,
+.lines-blue::after {
+  border-color: #0081ff;
+}
+
+.line-purple::after,
+.lines-purple::after {
+  border-color: #6739b6;
+}
+
+.line-mauve::after,
+.lines-mauve::after {
+  border-color: #9c26b0;
+}
+
+.line-pink::after,
+.lines-pink::after {
+  border-color: #e03997;
+}
+
+.line-brown::after,
+.lines-brown::after {
+  border-color: #a5673f;
+}
+
+.line-grey::after,
+.lines-grey::after {
+  border-color: #8799a3;
+}
+
+.line-gray::after,
+.lines-gray::after {
+  border-color: #aaaaaa;
+}
+
+.line-black::after,
+.lines-black::after {
+  border-color: #333333;
+}
+
+.line-white::after,
+.lines-white::after {
+  border-color: #ffffff;
+}
+ 
+.text-red,
+.line-red,
+.lines-red {
+	color: #e54d42;
+}
+
+.text-orange,
+.line-orange,
+.lines-orange {
+	color: #f37b1d;
+}
+
+.text-yellow,
+.line-yellow,
+.lines-yellow {
+	color: #fbbd08;
+}
+
+.text-olive,
+.line-olive,
+.lines-olive {
+	color: #8dc63f;
+}
+
+.text-green,
+.line-green,
+.lines-green {
+	color: #39b54a;
+}
+
+.text-cyan,
+.line-cyan,
+.lines-cyan {
+	color: #1cbbb4;
+}
+
+.text-blue,
+.line-blue,
+.lines-blue {
+	color: #0081ff;
+}
+
+.text-purple,
+.line-purple,
+.lines-purple {
+	color: #6739b6;
+}
+
+.text-mauve,
+.line-mauve,
+.lines-mauve {
+	color: #9c26b0;
+}
+
+.text-pink,
+.line-pink,
+.lines-pink {
+	color: #e03997;
+}
+
+.text-brown,
+.line-brown,
+.lines-brown {
+	color: #a5673f;
+}
+
+.text-grey,
+.line-grey,
+.lines-grey {
+	color: #8799a3;
+}
+
+.text-gray,
+.line-gray,
+.lines-gray {
+	color: #aaaaaa;
+}
+
+.text-black,
+.line-black,
+.lines-black {
+	color: #333333;
+}
+
+.text-white,
+.line-white,
+.lines-white {
+	color: #ffffff;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    font-size: 36rpx;
+    font-weight: 700;
+  }
+
+  .action {
+    font-size: 26rpx;
+    color: #666;
+
+    &.arrow {
+      font-family: icon !important;
+      &:after {
+        content: "\e6a3";
+      }
+    }
+  }
+}
+
+.safe-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
